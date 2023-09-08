@@ -11,7 +11,7 @@ function get_csv_values() {
     return new Promise((resolve, reject) => {
         const results = [];
 
-        fs.createReadStream('./attpreco.csv')
+        fs.createReadStream('./files/attpreco.csv')
             .pipe(csv({ separator: ',' }))
             .on('data', (data) => results.push(data))
             .on('end', () => resolve(results)) // Resolve a promise com os resultados

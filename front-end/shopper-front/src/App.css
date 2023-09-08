@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-image: url('./assets/shopper-br.png');
+  background-size: 'cover';
+  background-position: 'center';
+}
+
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  
+}
+
+.navbar-left {
+  width: 30%;
+}
+
+.navbar-links-center {
+  flex: 1;  
+  display: flex;    
+  justify-content: flex-start; 
+  align-items: center;
+  justify-items: stretch;
+  padding-left: 180px;
+}
+
+.navbar-links-center ul {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+}
+
+.navbar-links-center li {
+  margin-right: 20px;
+  display: flex;
+}
+
+.navbar-links-center a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.icon_img {
+  padding-left: 15px;
+  max-width: 30%;
+  height: auto;
+}
+
+.log_out {
+  max-width: 10%;
+  height: auto;
+  margin-right: 10px;
+}
+
+.navbar-right a {
+  width: 30%;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.section {
+  padding: 0 15%;
+  background-color: #333;
+  height: calc(100vh - 15vh);
+  overflow-y: auto;
+  margin: 40px 20% 0 20%;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* 
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+
+.navbar-left,
+.navbar-right {
+  margin-right: 10px;
+}
+
+
+.navbar-links ul {
+  display: flex;
+}
+
+.navbar-links li {
+  margin-right: 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}  */
