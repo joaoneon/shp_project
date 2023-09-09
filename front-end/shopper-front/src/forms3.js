@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const FileUpload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
-  const [isUploadSuccessful, setIsUploadSuccessful] = useState(false);
   const [isValidationSuccessful, setIsValidationSuccessful] = useState(false);
 
   const handleFileSelect = (event) => {
@@ -24,9 +23,7 @@ const FileUpload = () => {
           }
         });
         console.log('Arquivo enviado com sucesso:', response.data);
-        if (response.status === 200) {
-          setIsUploadSuccessful(true);
-        }
+        document.getElementById('botao-validar').disabled = false;
       } catch (error) {
         console.error('Erro ao enviar o arquivo:', error);
       }
@@ -35,7 +32,7 @@ const FileUpload = () => {
 
   const handleValidation = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/validar-arquivo');
+      const response = await axios.post('http://localhost:3001/validar-arquivo');
 
       if (response.status === 200) {
         setIsValidationSuccessful(true);
@@ -45,24 +42,12 @@ const FileUpload = () => {
     }
   };
 
-  const handleUpdate = async () =>{
-    try {
-      const response = await axios.put('http://localhost:3001/update-db');
-      
-      if (response.status === 200){
-        alert('Banco de dados atualizado');
-      }
-    } catch (error) {
-      console.error('Erro ao atualizar o banco de dados: ', error);
-    }
-  }
-
   return (
     <form onSubmit={handleSubmit}>
       <input type="file" onChange={handleFileSelect} />
       <button type="submit">Enviar</button>
-      <button id="botao-validar" onClick={handleValidation} disabled={!isUploadSuccessful}>Validar Arquivo</button>
-      <button id="botao-integrar" disabled={!isValidationSuccessful} onClick={handleUpdate}>Alterar no BD</button>
+      <button id="botao-validar" onClick={handleValidation} disabled={!selectedFile}>Validar Arquivo</button>
+      <button id="botao-integrar" disabled={!isValidationSuccessful}>Alterar no BD</button>
     </form>
   );
 };

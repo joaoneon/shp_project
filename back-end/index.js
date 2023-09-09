@@ -70,16 +70,40 @@ app.get('/price', async (request, response) => {
     }
 });
 
-app.post('/validar-arquivo', (request, response) =>{
+app.get('/validar-arquivo', async (request, response) => {
+    try {
+        // const new_price = await get_new_price();
+        // console.log('new_price:', new_price);
 
-    if (db.validate_new_price() >= 1){
-        response.status(200).send('Arquivo validado');
-    }
-    else {
-        response.status(400).send('Falha na validação');
-    }
-})
+        const validationStatus = await db.validate_new_price();
+        console.log('validationStatus:', validationStatus);
 
+        if (validationStatus >= 1) {
+            response.status(200).send('Arquivo validado');
+        } else {
+            response.status(400).send('Falha na validação, o arquivo não cumpre as regras de 10% acima ou 10% abaixo do preço atual');
+        }
+    } catch (error) {
+        console.log('Error:', error);
+        response.status(500).send('Erro na validação');
+    }
+});
+
+app.put('/update-db', async (request, response) => {
+    try{
+        const update_db = await db.update_price();
+        console.log(update_db);
+
+        if (update_db != null){
+            response.status(200).send('Banco de dados atualizado');
+        } else {
+            response.status(400).send('Falha na atualização do banco de dados');
+        }
+    } catch (error){
+        console.log('Error:', error);
+        response.status(500).send('Erro na atualização');
+    }
+});
 
 app.listen(port, () => {
     console.log(`Back-end listening on port ${port}`)

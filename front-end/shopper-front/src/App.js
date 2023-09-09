@@ -5,10 +5,6 @@ import logOutImg from './assets/vector.png'
 // import axios from 'axios';
 import FileUpload from './forms';
 
-
-// import logo from './shopper-br.png';
-
-
 function App() {
 
   // const formUpload = document.getElementById('form-upload');
@@ -38,13 +34,13 @@ function App() {
   //   const formUpload = document.getElementById('form-upload');
   //   formUpload.addEventListener('submit', function(event) {
   //     event.preventDefault(); // Impede o envio padrão do formulário
-  
+
   //     const inputArquivo = document.getElementById('input-arquivo');
   //     const arquivo = inputArquivo.files[0]; // Obtém o arquivo selecionado
-  
+
   //     const formData = new FormData();
   //     formData.append('arquivo', arquivo); // Adiciona o arquivo ao objeto FormData
-  
+
   //     // Requisição AJAX para a rota de upload
   //     const xhr = new XMLHttpRequest();
   //     xhr.open('POST', 'http://localhost:3001/upload');
@@ -62,18 +58,18 @@ function App() {
 
   // const FileUpload = () => {
   //   const [selectedFile, setSelectedFile] = useState(null);
-  
+
   //   const handleFileSelect = (event) => {
   //     setSelectedFile(event.target.files[0]);
   //   };
-  
+
   //   const handleSubmit = async (event) => {
   //     event.preventDefault();
-  
+
   //     if (selectedFile) {
   //       const formData = new FormData();
   //       formData.append('file', selectedFile);
-  
+
   //       try {
   //         const response = await axios.post('/upload', formData, {
   //           headers: {
@@ -88,7 +84,7 @@ function App() {
   //     }
   //   };
   // }
-  
+
   return (
     <div className="container">
       <header className="navbar">
@@ -110,15 +106,7 @@ function App() {
       </header>
       <main className="section">
         <section>
-
-          {/* <form id="form-upload" onSubmit={handleSubmit}>
-            <input type="file" id="input-arquivo" name="csvFile" onChange={handleFileSelect}/>
-              <button type="submit">Enviar</button>
-          </form> */}
           <FileUpload />
-          <button id="botao-validar" disabled>Validar Arquivo</button>
-
-
         </section>
       </main>
     </div>
