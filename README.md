@@ -1,3 +1,15 @@
+<h1 align="center">
+  Shopper project
+</h1>
+<p align="center">
+  <img src="https://github.com/joaoneon/shp_project/assets/6489188/7837c723-70c9-401e-bdcd-3d5d3e6943be" width=900px alt="animated" />
+</p>
+
+
+
+
+
+
 <h3 align="left">
 Sobre o projeto:
 </h3>
